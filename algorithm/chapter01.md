@@ -1067,3 +1067,9 @@ b = 14
 print(math.gcd(21, 14)) # 최대 공약수(GCD) 계산 : 7
 print(lcm(21, 14)) # 최소 공배수(LCM) 계산 : 42
 ```
+
+---
+
+## Reference.
+
+- [동빈나 Youtube : 이코테 2021 1장](https://youtu.be/m-9pAwq1o3w?feature=shared)
