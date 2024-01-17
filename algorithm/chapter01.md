@@ -755,4 +755,315 @@ while i <= 9:
 
 print(result)
 ```
+### 반복문에서의 무한 루프
 
+__무한 루프(Infinite Loop)__ 란 끊임없이 반복되는 반복문을 의미하는데, 코딩 테스트에서는 무한 루프를 구현 할 일은 거의 없으며,
+
+반복문을 작성한 뒤에는 항상 반복문을 탈출 할 수 있는 조건이 있는지 확인
+
+```python
+# 무한 루프
+x = 10
+
+while x > 5:
+    print(x)
+```
+
+### for
+
+특정한 변수를 이용하여 `in` 뒤에 오는 데이터(리스트, 튜플 등)에 포함되어 있는 원소를 첫 번째 인덱스부터 차례대로 하나씩 방문
+
+```python
+array = [9,8,7,6,5]
+
+# for문 기본 예제
+# array에 있는 원소들을 하나씩 방문
+for x in array:
+    print(x)
+```
+
+연속적인 값을 차례대로 순회할 때는 `range()` 를 사용하는데, 이 때 `range(start, end+1)` 형태로 사용.
+
+만약에 인자를 하나만 넣으면 자동으로 시작 값은 __0__
+
+```python
+result = 0
+
+# i는 1부터 9까지 순회
+for i in range(1,10):
+    result += i
+
+print(result) # 45
+```
+
+### 파이썬의 continue 키워드
+
+반복문에서 남은 코드의 실행을 건너뛰고, 다음 반복을 진행하고자 할 때 사용
+
+```python
+result = 0
+
+for i in range(1,10):
+    # 짝수일 때 continue를 통해 건너뜀
+    if i % 2 == 0:
+        continue
+    result += i
+
+print(result) # 25
+```
+
+### 반복문의 break 키워드
+
+반복문을 즉시 탈출하고자 할 때 사용
+
+```python
+i = 1
+
+while True:
+    print("현재 i의 값 : ", i)
+    if i == 5:
+        break
+
+    i += 1
+```
+
+---
+
+# 함수 & 람다 표현식
+
+함수(Function)이란 특정한 작업을 하나의 단위로 묶어 놓은 것
+
+함수를 통해 불필요한 코드를 줄일 수 있음
+
+### 함수의 종류
+
+- __내장 함수__ : Python이 기본적으로 제공하는 함수
+- __사용자 정의 함수__ : 개발자가 직접 정의하여 사용할 수 있는 함수
+
+### 함수 정의
+
+- __매개 변수__ : 함수 내부에서 사용할 변수
+- __반환 값__ : 함수에서 처리 된 결과를 반환
+
+```python
+# 함수 포맷
+def function_name(parameter): # parameter : 매개 변수
+    # Source Code
+
+    return return_value # 반환 값
+```
+
+```python
+# Sample
+def add(a, b):
+    return a + b
+
+def subtract(a, b):
+    return a - b
+
+result = add(3, 7) # 10
+
+print(result)
+
+result = subtract(3, 7) # -4
+
+print(result)
+```
+
+### 파라미터 지정하기
+파라미터의 경우 변수를 직접 지정할 수 있음 (순서가 달라져도 상관 없음)
+
+```python
+def add(a, b):
+    print('함수의 결과:', a+b)
+
+add(b = 3, a = 7) # 동일한 결과가 나옴 (10)
+```
+
+### Global 키워드 (크게 사용하지 않는 것 같아 보임)
+
+함수의 바깥에 있는 변수를 바로 참조할 경우
+
+
+```python
+a = 0
+
+def func():
+    global a
+    a += 1
+    print(a)
+```
+
+### 여러 개의 반환 값
+
+Python에서 함수는 여러 개의 반환 값을 가질 수 있음
+
+```python
+def operator(a, b):
+
+    add_var = a + b
+    subtract_var = a - b
+    multiply_var = a * b
+    divide_var = a / b
+
+    # 여러 개의 값 반환
+    return add_var, subtract_var, multiply_var, divide_var
+
+a, b, c, d = operator(7, 3)
+
+print(a, b, c, d) # 10 4 21 2
+```
+
+### 람다 표현식
+
+함수를 간단하게 작성하기 위해 사용하는데, 특정한 기능을 수행하는 함수를 한 줄에 간단하게 작성할 수 있다는 점이 특징
+
+```python
+deff add(a, b):
+    return a + b
+
+# 일반적인 add()
+print(add(3, 7))
+
+# 람다 표현식
+print((lambda a, b: a + b)(3, 7))
+```
+
+```python
+array [("홍길동", 50), ("이순신", 32), ("아무개", 74)]
+
+def my_key(x):
+    return x[1]
+
+print(sorted(array, key=my_key))
+print(sorted(array, key=lambda x: x[1])) # Lambda를 활용한 정렬 키 설정 (자주 사용)
+```
+
+```python
+list1 = [1,2,3,4,5]
+list2 = [6,7,8,9,10]
+
+result = map(lambda a, b: a + b, list1, list2) # 같은 길이, 속성의 리스트 끼리의 합
+
+print(list(result)) # [7, 9, 11, 13, 15]
+```
+
+---
+
+# 실전에서 유용한 표준 라이브러리
+
+1. __내장 함수__ : 기본 입출력 함수부터 정렬 함수까지 기본적인 함수들 제공 (Python 프로그램을 작성할 때 반드시 필요함)
+2. __itertools__ : Python에서 반복되는 형태의 데이터를 처리하기 위한 기능 제공 (특히, 순열과 조합 라이브러리는 코딩 테스트에서 완전탐색 문제로 자주 사용)
+3. __heapq__ : 힙(Heap) 자료 구조 제공 (일반적으로 __우선순위 큐__ 기능을 구현하기 위해 사용)
+4. __bisect__ : __이진 탐색(Binary Search)__ 기능 제공
+5. __collections__ : __덱(Deque)__ , __카운터(Counter)__ 등의 유용한 자료 구조 포함
+6. __math__ : 필수적인 수학적 기능 제공 (팩토리얼, 제곱근, 최대공약수, 삼각함수 관련 함수부터 파이와 같은 상수도 포함)
+
+### 자주 사용되는 내장 함수
+
+```python
+# sum()
+result = sum([1,2,3,4,5])
+print(result) # 15
+
+# min(), max()
+min_result = min(7,3,5,2)
+max_result = max(7,3,5,2)
+print(min_result, max_result) # 2 7
+
+# eval() : 사람이 작성하는 형태의 식을 넣었을 때 계산 결과를 반환
+result = eval("(3+5)*7")
+print(result) # 56
+
+# sorted()
+result = sorted([9,1,8,5,4])
+reverse_result = sorted([9,1,8,5,4], reverse=True)
+print(result) # [1,4,5,8,9]
+print(reverse_result) # [9,8,5,4,1]
+
+# sorted() with key
+array = [('홍길동', 35), ('이순신', 75), ('아무개', 50)]
+result = sorted(array, key=lambda x: x[1], reverse=True)
+print(result) # [('이순신', 75), ('아무개', 50), ('홍길동', 35)]
+```
+
+### 순열과 조합
+
+모든 경우의 수를 고려해야 할 때 사용
+
+- __순열__ : 서로 다른 n개에서 서로 다른 r개를 선택하여 일렬로 나열 (예: {'A', 'B', 'C'}에서 3개를 선택하여 나열 'ABC', 'ACB', 'BAC', 'BCA', 'CAB', 'CBA')
+- __조합__ : 서로 다른 n개에서 순서에 상관 없이 서로 다른 r개를 선택하는 것 (예: {'A', 'B', 'C'}에서 순서를 고려하지 않고 2개를 뽑는 경우 - 'AB', 'AC', 'BC')
+
+순열의 수 : `nPr = n*(n-1)*(n-2)*...*(n-r+1)`
+
+조합의 수 : `nCr = (n*(n-1)*(n-2)*...*(n-r+1)) / r!`
+
+```python
+### 순열
+from itertools import permutations
+
+data = ['A', 'B', 'C'] # 데이터 준비 (n)
+
+result = list(permutations(data, 3)) # 모든 순열 구하기 (r=3)
+
+print(result)
+
+### 조합
+from itertools import combinations
+
+data = ['A', 'B', 'C'] # 데이터 (n)
+
+result = list(combinations(data, 2)) # 2개를 뽑는 모든 조합 (r=2)
+
+print(result)
+
+### 중복 순열
+from itertools import product
+
+data = ['A', 'B', 'C'] # 데이터 준비 (n)
+
+result = list(product(data, repeat=2)) # 2개를 뽑는 모든 순열 구하기 (중복 허용)
+
+### 중복 조합
+from itertools import combinations_with_replacement
+
+data = ['A', 'B', 'C']
+
+result = list(combinations_with_replacement(data, 2)) # 2개를 뽑는 모든 조합 구하기  (중복 허용)
+
+print(result)
+```
+
+### Counter
+
+파이선 Collections 라이브러리의 counter는 등장 횟수를 세는 기능 제공
+
+리스트와 같은 반복 가능(iterable) 객체가 주어졌을 때 내부의 원소가 몇 번씩 등장했는지 알려줌
+
+```python
+from collections import Counter
+
+counter = Counter(['red', 'blue', 'green', 'blue', 'blue'])
+
+print(counter['blue']) # blue가 등장한 횟수 : 3
+print(counter['green']) # green이 등장한 횟수 : 1
+print(dict(counter)) # 사전 자료형으로 출력 : {'red': 2, 'blue': 3, 'green': 1}
+```
+
+### 최대 공약수와 최소 공배수
+
+math 라이브러리의 gcd() 함수 이용
+
+```python
+import math
+
+# 최소 공배수(LCM)를 구하는함수
+def lcm(a, b):
+    return a * b // math.gcd(a, b)
+
+a = 21
+b = 14
+
+print(math.gcd(21, 14)) # 최대 공약수(GCD) 계산 : 7
+print(lcm(21, 14)) # 최소 공배수(LCM) 계산 : 42
+```
