@@ -1,6 +1,10 @@
+[< 목차 바로 가기](../README.md)
+
+[Chapter 02. 이동 >](./chpater02.md)
+
 # 동빈나 알고리즘 강의 Chapter 01.
 
-> 동빈나 Youtube에 있는 Algorithm 강의 01
+> 코딩 테스트 출제 경향 분석 및 파이썬 문법 부수기
 
 # 코딩 테스트
 
