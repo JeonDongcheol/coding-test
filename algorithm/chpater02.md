@@ -186,6 +186,8 @@ for x in list_x:
 print(result) # 총 그룹의 수 출력
 ```
 
+---
+
 # 구현: 시뮬레이션과 완전 탐색
 
 __구현__ : 머릿속에 있는 알고리즘을 소스 코드로 바꾸는 과정 (문제 -> 생각 -> 구현)
@@ -522,3 +524,9 @@ if value != 0:
 print(''.join(result))
 
 ```
+
+---
+
+## Reference.
+
+- [동빈나 Youtube : 이코테 2021 1장](https://youtu.be/m-9pAwq1o3w?feature=shared)
