@@ -529,4 +529,4 @@ print(''.join(result))
 
 ## Reference.
 
-- [동빈나 Youtube : 이코테 2021 1장](https://youtu.be/m-9pAwq1o3w?feature=shared)
+- [동빈나 Youtube : 이코테 2021 2장](https://youtu.be/m-9pAwq1o3w?feature=shared)
