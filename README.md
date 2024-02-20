@@ -8,6 +8,12 @@
 
 ### Chapter 01. [코딩 테스트 출제 경향 분석 및 파이썬 문법 부수기](algorithm/chapter01.md)
 
-### Chapter 02. [그리디 & 구현](algorithm/chpater02.md)
+### Chapter 02. [그리디 & 구현](algorithm/chapter02.md)
 
-### Chapter 03. [DFS / BFS](algorithm/chpater02.md)
+### Chapter 03. [DFS / BFS](algorithm/chapter03.md)
+
+---
+
+## Reference)
+
+- [동빈나 유튜브 Channel](https://youtube.com/@dongbinna?feature=shared)

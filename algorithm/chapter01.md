@@ -1,6 +1,6 @@
 [< 목차 바로 가기](../README.md)
 
-[Chapter 02. 이동 >](./chpater02.md)
+[Chapter 02. 이동 >](./chapter02.md)
 
 # 동빈나 알고리즘 강의 Chapter 01.
 
