@@ -12,6 +12,8 @@
 
 ### Chapter 03. [DFS / BFS](algorithm/chapter03.md)
 
+### Chapter 04. [정렬 알고리즘](algorithm/chapter04.md)
+
 ---
 
 ## Reference)
