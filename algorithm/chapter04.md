@@ -615,6 +615,8 @@ for i in range(k):
 print(sum(a))
 ```
 
+---
+
 ## Reference.
 
 - [동빈나 Youtube : 이코테 2021 4장](https://youtu.be/KGyK-pNvWos?feature=shared)
